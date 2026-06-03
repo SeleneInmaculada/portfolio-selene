@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "education": "Formación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "Selene García Chacón",
+    "title": "Desarrolladora Web · Videojuegos · IA",
+    "tagline": "Creando soluciones donde la tecnología cobra sentido",
+    "cta": "Conóceme",
+    "scroll": "Descubre más"
+  },
+  "about": {
+    "heading": "Sobre Mí",
+    "body": "Desarrolladora Web con especialización en Inteligencia Artificial Aplicada a la Empresa, orientada a integrar IA en proyectos web reales. Cuento con experiencia práctica en desarrollo web frontend y backend, y he aplicado estos conocimientos en proyectos como un asistente inteligente con RAG desplegado en producción. Complemento mi perfil con una especialización en Videojuegos y Realidad Virtual, lo que me aporta una visión multidisciplinar única para abordar problemas desde diferentes ángulos.",
+    "location": "📍 Toledo, España",
+    "badge_ai": "🎓 IA Aplicada",
+    "badge_games": "🎮 Videojuegos",
+    "badge_web": "🌐 Desarrollo Web",
+    "download_cv": "Descargar CV"
+  },
+  "skills": {
+    "heading": "Competencias Técnicas",
+    "categories": [
+      {
+        "name": "IA Aplicada",
+        "icon": "brain",
+        "items": ["Prompting", "Bots", "Automatización", "Asistentes Virtuales", "Make", "n8n", "Low-Code / No-Code"]
+      },
+      {
+        "name": "Desarrollo Web",
+        "icon": "code",
+        "items": ["HTML5", "CSS3", "JavaScript", "React", "WordPress"]
+      },
+      {
+        "name": "Backend y Datos",
+        "icon": "database",
+        "items": ["Java", "Spring Boot", "JPA", "JDBC", "MySQL", "APIs REST"]
+      },
+      {
+        "name": "Videojuegos",
+        "icon": "gamepad",
+        "items": ["Unity", "Unreal Engine", "C#", "C++ Gameplay", "Pixel Art"]
+      },
+      {
+        "name": "Ciberseguridad",
+        "icon": "shield",
+        "items": ["OWASP", "Inyección SQL", "XSS", "Wireshark", "Nmap"]
+      },
+      {
+        "name": "Diseño y Creatividad",
+        "icon": "palette",
+        "items": ["Photoshop", "Krita", "Blender", "Figma", "Canva"]
+      },
+      {
+        "name": "Entorno de Trabajo",
+        "icon": "tools",
+        "items": ["Git / GitHub", "VS Code", "Scrum"]
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Proyectos",
+    "items": [
+      {
+        "title": "Asistente Inteligente Maxmund",
+        "description": "Sistema de atención al cliente con IA basada en RAG y agentes especializados, con API REST (JWT), tienda web completa de 19 páginas y despliegue en Docker en Hugging Face Spaces.",
+        "tech": ["FastAPI", "Groq API (Llama 3.3)", "SQLite FTS5", "Docker", "HF Spaces"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/INDIMONFLO_DEPLOY",
+          "demo": "https://seleneinmaculada-maxmund-chatbot.hf.space"
+        },
+        "date": "Mayo 2026"
+      },
+      {
+        "title": "Deadly Harmony",
+        "description": "Demo de videojuego propia con programación de mecánicas de gameplay, sistemas de diálogo, inventario e interacción con objetos. Arte digital en pixel art 2D.",
+        "tech": ["Unity", "C#", "Pixel Art 2D"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Deadly-Harmony"
+        },
+        "date": "Mayo 2024"
+      },
+      {
+        "title": "Escuela de Arte de Toledo",
+        "description": "Desarrollo completo de la web institucional del centro educativo, incluyendo estructura, diseño visual y funcionalidades a medida. Gestión de dominio, hosting y puesta en producción.",
+        "tech": ["WordPress", "PHP", "MySQL"],
+        "links": {
+          "demo": "https://escueladeartetoledo.com",
+          "github": "https://github.com/SeleneInmaculada/Documentacion-Creacion-Escueladeartetoledo.com"
+        },
+        "date": "Junio 2023"
+      },
+      {
+        "title": "Heaven Travel — Localización",
+        "description": "Proyecto de localización voluntaria para un juego indie. Traducción del inglés al español manteniendo la coherencia narrativa y de jugabilidad. Trabajo remoto colaborativo.",
+        "tech": ["Localización", "Inglés → Español", "Trabajo Remoto"],
+        "links": {
+          "demo": "https://play.google.com/store/apps/details?id=com.heaventravel&hl=es"
+        },
+        "date": "Julio 2019"
+      },
+      {
+        "title": "Creation-Of-Chatbot-AI",
+        "description": "Chatbot con IA desarrollado en Next.js con Firebase Studio. Implementa RAG con LlamaIndex y Gemini para respuestas contextuales basadas en documentos.",
+        "tech": ["Next.js", "Firebase", "LlamaIndex", "Gemini", "RAG"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Creation-Of-Chatbot-AI"
+        },
+        "date": "Abril 2026"
+      },
+      {
+        "title": "Dune 2D",
+        "description": "Videojuego en 2D basado en el universo de Dune. Desarrollo de mecánicas de juego, sprites y lógica de gameplay con Unity.",
+        "tech": ["Unity", "C#", "2D", "OpenCode"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Dune_Videogame_2D"
+        },
+        "date": "Abril 2026"
+      },
+      {
+        "title": "Graphic-Design",
+        "description": "Recopilación de trabajos de diseño gráfico en 2D y 3D, incluyendo ilustración digital, modelado 3D y diseño conceptual con diversas herramientas creativas.",
+        "tech": ["Photoshop", "Krita", "Blender", "Diseño 2D/3D"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Graphic-Design"
+        },
+        "date": "2024-2026"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Formación Académica",
+    "items": [
+      {
+        "year": "2026",
+        "title": "Programa Superior en Inteligencia Artificial Aplicada a la Empresa",
+        "subtitle": "CEOE - FEDETO – Universidad de Nebrija",
+        "detail": "Especialidad SEPE: IA Aplicada a la Empresa (IFCT0019) · 27 ECTS · 670h"
+      },
+      {
+        "year": "2024",
+        "title": "Especialización en Videojuegos y Realidad Virtual",
+        "subtitle": "IES Azarquiel, Toledo",
+        "detail": "600 horas"
+      },
+      {
+        "year": "2023",
+        "title": "Grado Superior en Desarrollo de Aplicaciones Web (DAW)",
+        "subtitle": "IES Azarquiel, Toledo",
+        "detail": ""
+      }
+    ],
+    "courses": "Cursos adicionales",
+    "course_list": ["JavaScript Intermedio (OpenWebinars)", "Arquitectura Web para SEO (OpenWebinars)", "Fundamentos SEO (OpenWebinars)"],
+    "languages": "Idiomas",
+    "lang_items": [
+      { "lang": "Español", "level": "Nativo" },
+      { "lang": "Inglés", "level": "B2 · Técnico" }
+    ]
+  },
+  "contact": {
+    "heading": "Contacto",
+    "subtitle": "¡Hablemos!",
+    "body": "Estoy disponible para oportunidades profesionales, proyectos freelance o colaboraciones. Si buscas una desarrolladora web con visión en IA, videojuegos y tecnología creativa, estaré encantada de conversar.",
+    "email": "selene.inmaculada@gmail.com",
+    "phone": "627 207 453",
+    "location": "Toledo, España",
+    "form": {
+      "name_placeholder": "Tu Nombre",
+      "email_placeholder": "Tu Email",
+      "subject_placeholder": "Asunto",
+      "message_placeholder": "Tu Mensaje",
+      "send": "Enviar Mensaje",
+      "success": "¡Gracias! Tu mensaje ha sido enviado correctamente.",
+      "error": "Hubo un error al enviar el mensaje. Inténtalo de nuevo."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Selene García Chacón. Todos los derechos reservados.",
+    "built_with": "Hecho con Astro"
+  },
+  "seo": {
+    "title": "Selene García Chacón — Desarrolladora Web · Videojuegos · IA",
+    "description": "Portfolio de Selene García Chacón. Desarrolladora Web con especialización en Inteligencia Artificial Aplicada y Videojuegos. Proyectos en IA, web y game development.",
+    "keywords": "desarrolladora web, IA, inteligencia artificial, portfolio, videojuegos, Unity, React, FastAPI, RAG, Toledo"
+  }
+}

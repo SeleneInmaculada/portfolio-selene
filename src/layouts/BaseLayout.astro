@@ -1,0 +1,322 @@
+---
+import '../styles/global.css';
+import LanguageToggle from '../components/LanguageToggle.astro';
+import ScrollAnim from '../components/ScrollAnim.astro';
+import { useTranslations, getLangFromUrl, type Lang } from '../i18n/utils';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  currentUrl?: URL;
+}
+
+const { title, description } = Astro.props;
+const url = Astro.props.currentUrl || Astro.url;
+const lang: Lang = getLangFromUrl(url);
+const t = useTranslations(lang);
+const base = '/portfolio-v2';
+
+const canonicalUrl = `https://seleneinmaculada.github.io/portfolio-v2${url.pathname.replace(/\/portfolio-v2/, '')}`;
+const ogTitle = title || t.seo.title;
+const ogDescription = description || t.seo.description;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{ogTitle}</title>
+  <meta name="description" content={ogDescription} />
+  <meta name="keywords" content={t.seo.keywords} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Selene García Chacón" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={ogDescription} />
+
+  <!-- Canonical -->
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+
+  <ScrollAnim />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="nav container">
+      <a href={`${base}/`} class="nav-logo">
+        <span class="logo-text">SG</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href={`${base}/`}>{t.nav.home}</a></li>
+        <li><a href={`${base}/#about`}>{t.nav.about}</a></li>
+        <li><a href={`${base}/#skills`}>{t.nav.skills}</a></li>
+        <li><a href={`${base}/#projects`}>{t.nav.projects}</a></li>
+        <li><a href={`${base}/#education`}>{t.nav.education}</a></li>
+        <li><a href={`${base}/#contact`}>{t.nav.contact}</a></li>
+        <li><LanguageToggle currentUrl={url} /></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-copyright">{t.footer.copyright}</p>
+        <p class="footer-built">{t.footer.built_with} 🚀</p>
+        <div class="footer-links">
+          <a href={`${base}/`}>{t.nav.home}</a>
+          <a href={`${base}/#about`}>{t.nav.about}</a>
+          <a href={`${base}/#skills`}>{t.nav.skills}</a>
+          <a href={`${base}/#projects`}>{t.nav.projects}</a>
+          <a href={`${base}/#education`}>{t.nav.education}</a>
+          <a href={`${base}/#contact`}>{t.nav.contact}</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu?.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger?.classList.remove('active');
+        navMenu?.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style is:global>
+  /* === Header === */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: rgba(15, 15, 26, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+  }
+
+  .nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary-light);
+    transition: var(--transition);
+    border-radius: 1px;
+  }
+
+  .nav-menu a:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+
+  /* === Hamburger === */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* === Footer === */
+  .footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    margin-top: 40px;
+  }
+
+  .footer-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer-built {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: rgba(15, 15, 26, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      gap: 16px;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .nav-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-menu a {
+      font-size: 1.1rem;
+    }
+  }
+</style>

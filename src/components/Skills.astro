@@ -1,0 +1,109 @@
+---
+import { useTranslations, getLangFromUrl, type Lang } from '../i18n/utils';
+
+export interface Props {
+  currentUrl: URL;
+}
+
+const { currentUrl } = Astro.props;
+const lang: Lang = getLangFromUrl(currentUrl);
+const t = useTranslations(lang);
+
+const iconMap: Record<string, string> = {
+  brain: 'fa-brain',
+  code: 'fa-code',
+  database: 'fa-database',
+  gamepad: 'fa-gamepad',
+  shield: 'fa-shield-halved',
+  palette: 'fa-palette',
+  tools: 'fa-screwdriver-wrench',
+};
+---
+
+<section class="section skills" id="skills">
+  <div class="container">
+    <h2 class="section-heading fade-in">{t.skills.heading}</h2>
+    <div class="skills-grid">
+      {t.skills.categories.map((cat, i) => (
+        <div class="skill-card fade-in" style={`transition-delay: ${i * 0.1}s`}>
+          <div class="skill-icon">
+            <i class={`fas ${iconMap[cat.icon] || 'fa-star'}`}></i>
+          </div>
+          <h3 class="skill-category-name">{cat.name}</h3>
+          <div class="skill-tags">
+            {cat.items.map(item => (
+              <span class="skill-tag">{item}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: var(--transition);
+  }
+
+  .skill-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .skill-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+  }
+
+  .skill-icon i {
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  .skill-category-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    padding: 4px 12px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    transition: var(--transition);
+  }
+
+  .skill-tag:hover {
+    background: rgba(124, 58, 237, 0.2);
+    color: var(--color-primary-light);
+    border-color: var(--color-primary);
+  }
+</style>

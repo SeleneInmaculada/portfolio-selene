@@ -1,0 +1,207 @@
+---
+import { useTranslations, getLangFromUrl, type Lang } from '../i18n/utils';
+
+export interface Props {
+  currentUrl: URL;
+}
+
+const { currentUrl } = Astro.props;
+const lang: Lang = getLangFromUrl(currentUrl);
+const t = useTranslations(lang);
+---
+
+<section class="section education" id="education">
+  <div class="container">
+    <h2 class="section-heading fade-in">{t.education.heading}</h2>
+    <div class="edu-grid">
+      <div class="edu-timeline fade-in-left">
+        {t.education.items.map((item, i) => (
+          <div class="timeline-item" style={`transition-delay: ${i * 0.15}s`}>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">{item.year}</span>
+              <h3 class="timeline-title">{item.title}</h3>
+              <p class="timeline-subtitle">{item.subtitle}</p>
+              {item.detail && <p class="timeline-detail">{item.detail}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="edu-side fade-in-right">
+        <div class="edu-card">
+          <h3 class="edu-card-title"><i class="fas fa-graduation-cap"></i> {t.education.courses}</h3>
+          <ul class="edu-list">
+            {t.education.course_list.map(course => (
+              <li><i class="fas fa-check-circle"></i> {course}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="edu-card">
+          <h3 class="edu-card-title"><i class="fas fa-language"></i> {t.education.languages}</h3>
+          <ul class="edu-list">
+            {t.education.lang_items.map(langItem => (
+              <li><span class="lang-name">{langItem.lang}</span> <span class="lang-level">{langItem.level}</span></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  /* === Timeline === */
+  .edu-timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .edu-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+    transition: var(--transition);
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+
+  .timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    transition: var(--transition);
+  }
+
+  .timeline-content:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .timeline-year {
+    display: inline-block;
+    padding: 2px 12px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-subtitle {
+    color: var(--color-primary-light);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .timeline-detail {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  /* === Side Cards === */
+  .edu-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+
+  .edu-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .edu-card-title i {
+    color: var(--color-primary-light);
+  }
+
+  .edu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .edu-list li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .edu-list li i {
+    color: var(--color-accent-secondary);
+    font-size: 0.85rem;
+  }
+
+  .lang-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 80px;
+  }
+
+  .lang-level {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .edu-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

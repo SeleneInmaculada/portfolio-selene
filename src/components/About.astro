@@ -1,0 +1,147 @@
+---
+import { useTranslations, getLangFromUrl, type Lang } from '../i18n/utils';
+
+export interface Props {
+  currentUrl: URL;
+}
+
+const { currentUrl } = Astro.props;
+const lang: Lang = getLangFromUrl(currentUrl);
+const t = useTranslations(lang);
+const base = '/portfolio-v2';
+---
+
+<section class="section about" id="about">
+  <div class="container">
+    <h2 class="section-heading fade-in">{t.about.heading}</h2>
+    <div class="about-grid">
+      <div class="about-text fade-in-left">
+        <p class="about-body">{t.about.body}</p>
+        <div class="about-badges">
+          <span class="badge"><i class="fas fa-map-marker-alt"></i> {t.about.location}</span>
+          <span class="badge"><i class="fas fa-robot"></i> {t.about.badge_ai}</span>
+          <span class="badge"><i class="fas fa-gamepad"></i> {t.about.badge_games}</span>
+          <span class="badge"><i class="fas fa-code"></i> {t.about.badge_web}</span>
+        </div>
+        <a href={`${base}/CV_Selene_Garcia_Chacon.pdf`} download class="btn-primary cv-btn">
+          <i class="fas fa-download"></i>
+          {t.about.download_cv}
+        </a>
+      </div>
+      <div class="about-stats fade-in-right">
+        <div class="stat-card">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">{lang === 'es' ? 'Proyectos' : 'Projects'}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">{lang === 'es' ? 'Titulaciones' : 'Degrees'}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">{lang === 'es' ? 'Años de experiencia' : 'Years Experience'}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-body {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .about-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .badge i {
+    color: var(--color-primary-light);
+  }
+
+  .cv-btn {
+    margin-top: 8px;
+  }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .stat-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-stats {
+      flex-direction: row;
+    }
+
+    .stat-card {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-stats {
+      flex-direction: column;
+    }
+  }
+</style>

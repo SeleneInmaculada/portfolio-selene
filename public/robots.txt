@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seleneinmaculada.github.io/portfolio-v2/sitemap-index.xml

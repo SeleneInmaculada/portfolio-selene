@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "Selene García Chacón",
+    "title": "Web Developer · Video Games · AI",
+    "tagline": "Building solutions where technology makes sense",
+    "cta": "About Me",
+    "scroll": "Discover More"
+  },
+  "about": {
+    "heading": "About Me",
+    "body": "Web Developer specialized in Applied Artificial Intelligence for Business, focused on integrating AI into real-world web projects. I have hands-on experience in frontend and backend development, and I have applied this knowledge in projects such as an intelligent RAG-based assistant deployed in production. I complement my profile with a specialization in Video Games and Virtual Reality, giving me a unique multidisciplinary perspective to tackle problems from different angles.",
+    "location": "📍 Toledo, Spain",
+    "badge_ai": "🎓 Applied AI",
+    "badge_games": "🎮 Video Games",
+    "badge_web": "🌐 Web Development",
+    "download_cv": "Download CV"
+  },
+  "skills": {
+    "heading": "Technical Skills",
+    "categories": [
+      {
+        "name": "Applied AI",
+        "icon": "brain",
+        "items": ["Prompting", "Bots", "Automation", "Virtual Assistants", "Make", "n8n", "Low-Code / No-Code"]
+      },
+      {
+        "name": "Web Development",
+        "icon": "code",
+        "items": ["HTML5", "CSS3", "JavaScript", "React", "WordPress"]
+      },
+      {
+        "name": "Backend & Data",
+        "icon": "database",
+        "items": ["Java", "Spring Boot", "JPA", "JDBC", "MySQL", "REST APIs"]
+      },
+      {
+        "name": "Video Games",
+        "icon": "gamepad",
+        "items": ["Unity", "Unreal Engine", "C#", "C++ Gameplay", "Pixel Art"]
+      },
+      {
+        "name": "Cybersecurity",
+        "icon": "shield",
+        "items": ["OWASP", "SQL Injection", "XSS", "Wireshark", "Nmap"]
+      },
+      {
+        "name": "Design & Creativity",
+        "icon": "palette",
+        "items": ["Photoshop", "Krita", "Blender", "Figma", "Canva"]
+      },
+      {
+        "name": "Tools & Workflow",
+        "icon": "tools",
+        "items": ["Git / GitHub", "VS Code", "Scrum"]
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projects",
+    "items": [
+      {
+        "title": "Maxmund Intelligent Assistant",
+        "description": "AI-powered customer support system using RAG and specialized agents, with a REST API (JWT), a complete 19-page online store, and Docker deployment on Hugging Face Spaces.",
+        "tech": ["FastAPI", "Groq API (Llama 3.3)", "SQLite FTS5", "Docker", "HF Spaces"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/INDIMONFLO_DEPLOY",
+          "demo": "https://seleneinmaculada-maxmund-chatbot.hf.space"
+        },
+        "date": "May 2026"
+      },
+      {
+        "title": "Deadly Harmony",
+        "description": "Original video game demo featuring gameplay mechanics, dialogue systems, inventory, and object interaction. 2D pixel art digital design.",
+        "tech": ["Unity", "C#", "Pixel Art 2D"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Deadly-Harmony"
+        },
+        "date": "May 2024"
+      },
+      {
+        "title": "Escuela de Arte de Toledo",
+        "description": "Complete institutional website for the art school, including structure, visual design, and custom functionality. Domain management, hosting, and production deployment.",
+        "tech": ["WordPress", "PHP", "MySQL"],
+        "links": {
+          "demo": "https://escueladeartetoledo.com",
+          "github": "https://github.com/SeleneInmaculada/Documentacion-Creacion-Escueladeartetoledo.com"
+        },
+        "date": "June 2023"
+      },
+      {
+        "title": "Heaven Travel — Localization",
+        "description": "Volunteer localization project for an indie game. English to Spanish translation while maintaining narrative and gameplay coherence. Remote collaborative work.",
+        "tech": ["Localization", "English → Spanish", "Remote Work"],
+        "links": {
+          "demo": "https://play.google.com/store/apps/details?id=com.heaventravel&hl=es"
+        },
+        "date": "July 2019"
+      },
+      {
+        "title": "Creation-Of-Chatbot-AI",
+        "description": "AI chatbot built with Next.js and Firebase Studio. Implements RAG using LlamaIndex and Gemini for contextual document-based responses.",
+        "tech": ["Next.js", "Firebase", "LlamaIndex", "Gemini", "RAG"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Creation-Of-Chatbot-AI"
+        },
+        "date": "April 2026"
+      },
+      {
+        "title": "Dune 2D",
+        "description": "2D video game based on the Dune universe. Game mechanics, sprites, and gameplay logic development with Unity.",
+        "tech": ["Unity", "C#", "2D", "OpenCode"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Dune_Videogame_2D"
+        },
+        "date": "April 2026"
+      },
+      {
+        "title": "Graphic-Design",
+        "description": "Collection of 2D and 3D graphic design work, including digital illustration, 3D modeling, and concept design using various creative tools.",
+        "tech": ["Photoshop", "Krita", "Blender", "2D/3D Design"],
+        "links": {
+          "github": "https://github.com/SeleneInmaculada/Graphic-Design"
+        },
+        "date": "2024-2026"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education",
+    "items": [
+      {
+        "year": "2026",
+        "title": "Higher Program in Applied Artificial Intelligence for Business",
+        "subtitle": "CEOE - FEDETO – Nebrija University",
+        "detail": "SEPE Specialization: Applied AI for Business (IFCT0019) · 27 ECTS · 670h"
+      },
+      {
+        "year": "2024",
+        "title": "Specialization in Video Games and Virtual Reality",
+        "subtitle": "IES Azarquiel, Toledo",
+        "detail": "600 hours"
+      },
+      {
+        "year": "2023",
+        "title": "Higher Degree in Web Application Development (DAW)",
+        "subtitle": "IES Azarquiel, Toledo",
+        "detail": ""
+      }
+    ],
+    "courses": "Additional courses",
+    "course_list": ["Intermediate JavaScript (OpenWebinars)", "Web Architecture for SEO (OpenWebinars)", "SEO Fundamentals (OpenWebinars)"],
+    "languages": "Languages",
+    "lang_items": [
+      { "lang": "Spanish", "level": "Native" },
+      { "lang": "English", "level": "B2 · Technical" }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "subtitle": "Let's Talk!",
+    "body": "I'm available for professional opportunities, freelance projects, or collaborations. If you're looking for a web developer with a vision in AI, video games, and creative technology, I'd love to chat.",
+    "email": "selene.inmaculada@gmail.com",
+    "phone": "627 207 453",
+    "location": "Toledo, Spain",
+    "form": {
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email",
+      "subject_placeholder": "Subject",
+      "message_placeholder": "Your Message",
+      "send": "Send Message",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "There was an error sending your message. Please try again."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Selene García Chacón. All rights reserved.",
+    "built_with": "Built with Astro"
+  },
+  "seo": {
+    "title": "Selene García Chacón — Web Developer · Video Games · AI",
+    "description": "Portfolio of Selene García Chacón. Web Developer specialized in Applied Artificial Intelligence and Video Games. Projects in AI, web development, and game development.",
+    "keywords": "web developer, AI, artificial intelligence, portfolio, video games, Unity, React, FastAPI, RAG, Toledo"
+  }
+}

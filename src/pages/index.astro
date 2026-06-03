@@ -1,0 +1,21 @@
+---
+// Portfolio v2 — ES (Español)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+
+const currentUrl = Astro.url;
+---
+
+<BaseLayout currentUrl={currentUrl}>
+  <Hero currentUrl={currentUrl} />
+  <About currentUrl={currentUrl} />
+  <Skills currentUrl={currentUrl} />
+  <Projects currentUrl={currentUrl} />
+  <Education currentUrl={currentUrl} />
+  <Contact currentUrl={currentUrl} />
+</BaseLayout>

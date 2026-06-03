@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+export interface Props {
+  currentUrl: URL;
+}
+
+const { currentUrl } = Astro.props;
+const currentLang = getLangFromUrl(currentUrl);
+const base = '/portfolio-v2';
+---
+
+<div class="lang-toggle">
+  <a href={`${base}/`} class:list={{ active: currentLang === 'es' }} aria-label="Español">ES</a>
+  <span class="separator">|</span>
+  <a href={`${base}/en/`} class:list={{ active: currentLang === 'en' }} aria-label="English">EN</a>
+</div>
+
+<style>
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 16px;
+  }
+
+  .lang-toggle a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+  }
+
+  .lang-toggle a:hover {
+    color: var(--color-primary-light);
+  }
+
+  .lang-toggle a.active {
+    color: var(--color-primary-light);
+    background: rgba(124, 58, 237, 0.15);
+  }
+
+  .separator {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.4;
+  }
+</style>
