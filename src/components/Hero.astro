@@ -8,6 +8,7 @@ export interface Props {
 const { currentUrl } = Astro.props;
 const lang: Lang = getLangFromUrl(currentUrl);
 const t = useTranslations(lang);
+const base = '/portfolio-v2';
 ---
 
 <section class="hero" id="home">
@@ -22,11 +23,11 @@ const t = useTranslations(lang);
     <p class="hero-title">{t.hero.title}</p>
     <p class="hero-tagline">{t.hero.tagline}</p>
     <div class="hero-actions">
-      <a href={`${'/'}${lang === 'en' ? 'en/' : ''}#about`} class="btn-primary">
+      <a href={`${base}/${lang === 'en' ? 'en/' : ''}#about`} class="btn-primary">
         {t.hero.cta}
         <i class="fas fa-arrow-down"></i>
       </a>
-      <a href={`${'/'}${lang === 'en' ? 'en/' : ''}#contact`} class="btn-secondary">
+      <a href={`${base}/${lang === 'en' ? 'en/' : ''}#contact`} class="btn-secondary">
         {lang === 'es' ? 'Contactar' : 'Contact'}
         <i class="fas fa-envelope"></i>
       </a>
