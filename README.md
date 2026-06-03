@@ -5,7 +5,7 @@
 
 Bilingual (ES/EN) personal portfolio built with **Astro**, deployed on **GitHub Pages**.
 
-**Live site**: [seleneinmaculada.github.io/portfolio-v2](https://seleneinmaculada.github.io/portfolio-v2)
+**Live site**: [seleneinmaculada.github.io/portfolio-v2](https://seleneinmaculada.github.io/portfolio-selene)
 
 ---
 
